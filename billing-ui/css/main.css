@@ -1,0 +1,97 @@
+/*.btn-lg {
+	background-color: silver;
+}*/
+
+
+body{
+	/*color: white;*/
+	background-color:white;
+}
+ 
+button{
+	display: inline-block;
+	color: black;
+	border-radius: 4px;
+	background-color:#18BC9C;
+	border: none;
+	padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    padding-top: -20px;
+    margin: 4px 4px;
+    cursor: pointer;
+    height: 37px;
+
+}
+
+th{
+	background-color: #2C3E50;
+    color: white;
+    width : 145px !important;
+}
+/*td{
+
+}*/
+
+input{
+	color: white !important  ;
+	background-color:#2C3E50;
+	text-transform: bold;
+	height: 37px;
+}
+
+a {
+    cursor:pointer;
+}
+
+
+table, th, td {
+  border: 1px solid black !important;
+}
+
+table {
+	min-height: 400px;
+}
+
+.container-fluid{
+	background-color:#0B5345     !important;
+	/*background-color: #16A085   !important;*/
+	color: white;
+}
+
+.divtag{
+	margin-right:0;
+}
+
+input::-webkit-input-placeholder {
+color: white !important;
+}
+
+select{
+	background-color: #2C3E50!important;
+
+	border: none;
+	color: white !important;
+
+}
+
+.excel-btn{
+	background-color: none !important;
+}
+.fun{
+	background-color: white;
+}
+.scrollabletb {
+    overflow:scroll;
+    height:300px;
+}
+
+thead, tbody { display: block; }
+
+tbody {
+    height: 700px;       /* Just for the demo          */
+    overflow-y: auto;    /* Trigger vertical scroll    */
+    overflow-x: hidden;  /* Hide the horizontal scroll */
+}

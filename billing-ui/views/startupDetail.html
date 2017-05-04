@@ -1,0 +1,205 @@
+  <br>
+  <br>
+  <br>
+  <br>
+ 
+<div class="row">
+<!-- <div class="col-md-1"></div> -->
+<br><div class="col-md-1"></div>
+    <div class="col-md-4" style="" >
+     <h2><b> {{fullmeows[0].Name}}</b></h2>
+
+    </div>
+    
+</div>
+    <br><br>
+  
+<br>
+<br>
+            <div class="row" align="centre">
+            <div class="col-sm-1" style="padding-right: 170px"></div>
+                <div class="col-lg-3 col-md-6"> 
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-comments fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge"><h5>{{fullmeows[0].Founded_Date}}</h5></div>
+                                    <div>Founded Date</div>
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-money fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge"><h5>${{fullmeows[0].Tot_Funding}}</h5></div>
+                                    <div>Total Funding</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-chevron-circle-down fa-5x"></i>
+                                </div>
+
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge"><h5>{{fullmeows[0].Category1}},{{fullmeows[0].Category2}},{{fullmeows[0].Category3}},{{fullmeows[0].Category4}},{{fullmeows[0].Category5}},{{fullmeows[0].Category6}},{{fullmeows[0].Category7}},{{fullmeows[0].Category8}},{{fullmeows[0].Category9}},{{fullmeows[0].Category10}},{{fullmeows[0].Category11}},{{fullmeows[0].Category12}}</h5></div>
+                                    <div>Category</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+               
+            </div>
+
+<div class="col-md-1"></div>
+
+<div class="col-md-11" align="left" style="overflow-x: auto;">
+  
+</div>
+<div class="col-md-1"></div>
+
+<section>
+            <div id="cbx-aboutus" class="cbx-section cbx-aboutus">
+                <div class="cbx-inner">
+                    <div class="container">
+                        <div class="text-center cbx-content">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="cbx-heading">
+                                        <h2 class="uppercase wow fadeInUp">About & Description</h2>
+                                        <hr noshade size="" width="" color="">
+                                    </div>
+                                    <div>
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <div class="cbx-about-text text-left xs-text-center">
+                                                    <p>
+                                                        {{fullmeows[0].Description}}
+                                                    </p>
+                                                    <p>
+                                                        {{fullmeows[0].About}}
+                                                    </p>
+                                                    <span></span>
+                                                </div>
+                                            </div> <!--//.COL-->
+                                            <div class="col-sm-5">
+                                                <div class="about-img">
+                                                    <img src="/img/description.png" alt="" height="250px">
+                                                </div>
+                                            </div> <!--//.COL-->
+                                        </div> <!--//.ROW-->
+                                    
+                                    </div>
+                                </div> <!--//.COL-->
+                            </div> <!--//.ROW-->
+                        </div> <!--//. CBX CONTENT CONTENT-->
+                    </div> <!--//.CONAINER-->
+                </div><!--//.CBX INNER-->
+            </div><!--//.CBX SECTION -->
+        </section>
+        <section>
+            <div id="cbx-aboutus" class="cbx-section cbx-aboutus">
+                <div class="cbx-inner">
+                    <div class="container">
+                        <div class="text-center cbx-content">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="cbx-heading">
+                                        <h2 class="uppercase wow fadeInUp">Location & Details</h2>
+                                        <hr noshade size="" width="" color="">
+                                    </div>
+                                    <div>
+                                        <div class="row">
+                                            
+                                            <div class="col-sm-5">
+                                                <div class="about-img">
+                                                    <img src="/img/signs.png" alt="" height="200px">
+                                                </div>
+                                            </div> <!--//.COL-->
+                                            <div class="col-sm-7">
+                                                <div class="cbx-about-text text-left xs-text-center">
+                                                    <p>
+                                                        <b>City     : </b>{{fullmeows[0].City}}<br>
+                                                        <b>State    : </b>{{fullmeows[0].State}}<br>
+                                                        <b>Country  : </b>{{fullmeows[0].Country}}<br>
+                                                        <b>Continent: </b>{{fullmeows[0].Continent}}<br>
+                                                        <b>Facebook : </b>{{fullmeows[0].FB_Link}}<br>
+                                                        <b>Twitter  : </b>{{fullmeows[0].Twitter_Link}}<br>
+                                                        <b>Linkedin : </b>{{fullmeows[0].Linkedin_Link}}<br>
+                                                        <b>Website  : </b>{{fullmeows[0].URL}}<br>
+
+                                                    </p>
+                                                    <span></span>
+                                                </div>
+                                            </div> <!--//.COL-->
+                                        </div> <!--//.ROW-->
+                                    
+                                    </div>
+                                </div> <!--//.COL-->
+                            </div> <!--//.ROW-->
+                        </div> <!--//. CBX CONTENT CONTENT-->
+                    </div> <!--//.CONAINER-->
+                </div><!--//.CBX INNER-->
+            </div><!--//.CBX SECTION -->
+        </section>
+
+
+<!--   <a href={{fullmeows[0].FB_Link}}><img class="navbar-brand" src="/img/fb-logo.png" alt=""  width="100px" height="100px"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href={{fullmeows[0].Twitter_Link}}><img class="navbar-brand" src="/img/twitter.png" alt="latentview logo" width="70" height="50"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href={{fullmeows[0].Linkedin_Link}}><img class="navbar-brand" src="/img/linkedin.png" alt="latentview logo" width="70" height="50"></a>&nbsp;&nbsp;&nbsp;&nbsp;               -->
+</div>
+  <div class="col-md-12">
+    
+<br><br><br><br>
+<center><h4>{{chartna}}</h4></center><br>
+ <center><h3>{{charttitle}}</h3></center>
+
+
+
+
+ <div id="chart_div" ></div>
+  </div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-12">
+                        
+                        <p align="right">Powered by Latentview&nbsp;</p>
+                  
+                  </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+        
+    </footer>
+    
+
+
+
+
+ 

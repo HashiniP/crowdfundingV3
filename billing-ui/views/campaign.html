@@ -1,0 +1,295 @@
+<div class="row feed" style="margin-top: 40px;">
+<!-- <div class="col-sm-6">
+<a href="#/home" class="btn btn-primary btn-lg" role="button" aria-pressed="true" style="margin-right: -14px;">Startup</a>
+</div>
+<div class="col-sm-6">
+<a href="#/campaign" class="btn btn-primary btn-lg " role="button" aria-pressed="true" style="margin-left: -15px;">Campaign</a>
+</div>
+</div> -->
+<br><br><br><br>
+<center><h3><b>Campaigns</b></h3></center>
+<br/>
+<br/>
+<div id="feed"  >
+    <!-- <div class="col-sm-3" style="max-height:350px; overflow-y:scroll;" > -->
+
+    <div class="col-md-3"></div>
+    <div class="col-md-4">
+    
+<center>
+<select  ng-model="topMarketTag"
+                        ng-options="x.MarketTag as x.MarketTag for x in toptablefull| orderBy : 'MarketTag' |unique :'MarketTag'"
+                        class="form-control" 
+                        ng-required="true"                        
+                        id="topMarketTag">
+                        <option value="">All Categories </option>
+                        </select>
+  </center>
+                        
+         
+</div>
+<div class="col-md-2">
+  <button ng-click=filterfortop()>Filter</button>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button ng-click=resetfortop()>Reset</button>
+</div>
+
+
+<br><br><br><br>
+<div class="row">
+    <br>
+    <div class="col-md-1"></div>
+           <div class="col-md-4" >
+
+    <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Top campaigns by total funding</h4><br>
+             <!-- <table id="table_format" class="col-md-8 table table-bordered" style="overflow:scroll;width:400px;height:400px;" > -->
+             <table id="table_format" class="col-md-8 table table-bordered" style="width:500px" >
+                    <tbody style="max-height:900px;">
+                                
+                                   <th>Name</th>
+                                    <th>Total funding</th>
+                                   <!--  <th>% increase</th> -->
+                                <tr data-ng-repeat="x in toptable"  >
+                                    <td>{{x.Campaign_Name}}</td>
+                                    <td>${{x.Fund_Raised| number}}</td>
+                                </tr> 
+
+                    </tbody>
+            </table>
+    
+    </div>
+
+  <div class="col-md-1"></div>
+    <div class="col-md-5">
+    
+    <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Campaigns by Country / State / City</h4>
+        <div id="worldchart" style="width: 600px; height: 400px;"></div>
+    </div>   
+    
+
+    <div class="col-md-4">
+        <br><br><h4 align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#Campaigns by Category</h4>
+       
+        <div id="piechart" style="width: 800px; height: 350px;"></div>
+        
+    </div>
+     </div>
+ </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!--  <div class="col-md-8"></div> -->
+    <div class="col-sm-12">
+     <center>
+       <input type="text" ng-model="textWord" placeholder="Search text here" style=" width: 500px;"> &nbsp;&nbsp;&nbsp;&nbsp;<button ng-click=textSearch()>Search</button><br><br><br>
+       </center>
+
+    </div>
+
+<div class="col-md-12"></div>
+ 
+
+<!--     <div class="col-sm-2">
+<select  ng-model="Campaign_Name"
+                        ng-options="x.Campaign_Name as x.Campaign_Name for x in fullmeows | unique : 'Campaign_Name' "
+                        class="form-control" 
+                        ng-required="true"
+                        id="Campaign_Name" >
+                        <option value="">All Campaign Name</option>
+                        </select>
+                        
+</div> -->
+         
+
+<div class="col-md-2">
+<select  ng-model="Country"
+                        ng-options="x.Country as x.Country for x in fullmeows | unique : 'Country'"
+                        
+                        class="form-control" 
+                        ng-required="true"
+                        id="Country">
+                        <option value="">All Country</option>
+                        </select>
+                        
+</div>
+
+<div class="col-md-2">
+<select  ng-model="MarketTag"
+                        ng-options="x.MarketTag as x.MarketTag for x in fullmeows| unique : 'MarketTag'"
+                        class="form-control" 
+                        ng-required="true"
+                        id="MarketTag">
+                        <option value="">All Categories </option>
+                        </select>
+                        
+         
+</div>
+
+
+
+<div class="col-md-2">
+<select  ng-model="Channel"
+                        ng-options="x.Channel as x.Channel for x in fullmeows | unique : 'Channel'"
+                        class="form-control" 
+                        ng-required="true"
+                        id="Channel">
+                        <option value="">All Channels</option>
+                        </select>
+                        
+         
+</div>
+<div class="col-md-2">
+<select  ng-model="Fund_Data_Availability"
+                       ng-options="x.Fund_Data_Availability as x.Fund_Data_Availability for x in fullmeows | unique : 'Fund_Data_Availability'"
+                       class="form-control" 
+                       ng-required="true"
+                       id="Fund_Data_Availability">
+                       <option value="">Fund Data Availability</option>
+                       </select>
+</div>
+<!-- <div class="col-sm-2">
+<TD><select  ng-model="Country"
+                        ng-options="x.Country as x.Country for x in meows"
+                        class="form-control" 
+                        ng-required="true"
+                        id="Country">
+                        <option value="">Country</option>
+                        </select>
+                        </TD>
+         
+</div> -->
+
+<div class="col-md-3">
+
+<button ng-click=somett()>Filter</button>
+
+<button ng-click=reset()>Reset</button>
+</div>
+</div>
+
+<div class="col-md-1" style="padding-bottom:30px">
+<a  ng-click=getdata() style="background-color: none; cursor: pointer;">
+       <img  id="btnExport" class="navbar-header" style="padding-left:0px;width="70px" height="40px"" src="/img/excel.png"  >
+   </a>
+</div>
+
+<div class="col-md-12"> <br><br></div>
+         
+    <!-- <div class="col-sm-2">
+          <input align="right" type="text"  class="form-control" placeholder="Search for keyword">
+    </div> --> 
+<br>
+<br>
+<br>
+<br>
+
+<!-- <div class="col-md-8" > -->
+<div class="col-md-12" id="divTableDataHolder" >
+
+  <div class="table-responsive">
+     <table id="table_format" class="col-md-8 table table-bordered" style="overflow-x: auto">
+                     
+                        <tbody>
+                        
+                       
+                        <tr>
+                            <th>Campaign_Name</th>
+                            <!-- <th>Description</th> -->
+                           <!--  <th>Oneliner</th>
+                            <th>Location</th> -->
+                            <th>Country</th>
+                            <!-- <th>Continent</th> -->
+                            <th>MarketTag</th>
+                            <!-- <th>Team</th> -->
+                            <!-- <th>Stage</th> -->
+                            <th>Location</th>
+                            <th>Pledged Amount</th>
+                            <th>Fund Raised</th>
+                            <th>Backers</th>
+                            <th>Channel</th>
+                                                       
+                        </tr>
+                        
+                        
+                    
+                      <tr data-ng-repeat="meow in filterData |filter:search">
+                        <td title="'Campaign_Name'" filter="{ Campaign_Name: 'text'}" sortable="'Campaign_Name'"  ><a  href="#/campaigndetail?campaignname={{meow.Primary_Key}}" data-toggle="tooltip" title={{meow.About}}>{{meow.Campaign_Name}}</div></a></td>
+                        <!-- <td title="'Description'" filter="{ Description: 'text'}" sortable="'Description'" class="container"><div class="table-responsive" style="height: 40px">>{{meow.Description}}</div></td> -->
+                     <!--    <td title="'Oneliner '" filter="{ Oneliner: 'number'}" sortable="'Oneliner'">{{meow.Oneliner}}</td>
+                        <td title="'Location'" filter="{ Location: 'text'}" sortable="'Location'">{{meow.Location}}</td> -->
+                        <td title="'Country '" filter="{ Country: 'number'}" sortable="'Country'">{{meow.Country}}</td>
+                        <!-- <td title="'Continent'" filter="{ Continent: 'text'}" sortable="'Continent'">{{meow.Continent}}</td>  -->                                 
+                        <td title="'MarketTag'" filter="{ MarketTag: 'text'}" sortable="'MarketTag'">{{meow.MarketTag}}</td>
+                                    
+                        <!-- <td title="'Stage'" filter="{ Stage: 'text'}" sortable="'Stage'">{{meow.Stage}}</td> -->
+                      <!--   <td title="'Team'" filter="{ Price: 'Team'}" sortable="'Team'">{{meow.Team}}</td> -->
+                        <td title="'Location '" filter="{ Location: 'number'}" sortable="'Location'">{{meow.Location}}</td>
+                         <td title="'Pledged_Amount'" filter="{ Pledged_Amount: 'text'}" sortable="'Pledged_Amount'">{{meow.Pledged_Amount| number}}</td> 
+                        <td title="'Fund_Raised '" filter="{ Fund_Raised: 'number'}" sortable="'Fund_Raised'">${{meow.Fund_Raised| number}}</td>
+                        <td title="'Backers '" filter="{ Backers: 'number'}" sortable="'Backers'">{{meow.Backers}}</td>
+                        <td title="'Channel '" filter="{ Channel: 'number'}" sortable="'Channel'">{{meow.Channel}}</td>
+                                             
+
+                       
+
+
+                       <!--  <td><a href ng-click="removeMeow(meow)"><span class="glyphicon glyphicon-trash"></span></a></td> -->
+                      </tr>
+                    </tbody>
+                </table>
+                </div></div>
+                 <br><br>
+                <center>{{chartna}}</center><br><br><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                <button ng-click=firstpage()><< First</button>
+                <button ng-click=prevpage()>< Previous</button>
+               
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       
+
+                Page number :<input ng-model="currentpageno"  type="number" name="currentpageno">&nbsp;&nbsp;&nbsp;/ {{lastpageno}}
+                &nbsp;&nbsp;&nbsp;&nbsp;    
+
+                <button ng-click=goto()>Go </button>
+
+                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                 
+                <button ng-click=nextpage()>Next ></button>
+                <button ng-click=lastpage()>Last >></button>
+                <br><br>
+    </div>
+</div>
+  <br><br>
+  
+
+   <footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-12">
+                        
+                        <p align="right">Powered by Latentview&nbsp;</p>
+                  
+                  </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+        
+    </footer>
+<!-- <script type="text/javascript">
+ $("#btnExport").click(function (e) {
+   $(this).attr({
+       'download': "campaign table.xls",
+           'href': 'data:application/csv;charset=utf-8,' + encodeURIComponent( $('#divTableDataHolder').html())
+   })
+});
+
+
+</script>

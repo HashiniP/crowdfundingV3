@@ -1,0 +1,303 @@
+<br>
+<br><br><br><br>
+
+
+<!-- <center><h1 class="name">web interface</h1>
+<hr class="star-primary"></center> -->
+<!-- <center><h3><b>Startups</b></h3></center> -->
+
+<br>
+<div class="row">
+ <div class="col-md-3"></div>
+<div class="col-sm-4">
+<select  ng-model="Category1"
+                        ng-options="x.Category as x.Category for x in topIndustryTag  | orderBy:'Category'"
+                        class="form-control" 
+                        ng-required="true"
+                        id="Category">
+                        <option value="">All Category </option>
+                        </select>
+                        
+         
+</div>
+
+<!-- <div class="col-sm-2">
+<select  ng-model="Category"
+                        ng-options="x.Category as x.Category for x in IndustryTag| orderBy:'Category'| unique : 'Category'"
+                        class="form-control" 
+                        ng-required="true"
+                        id="Category">
+                        <option value="">All Category </option>
+                        </select>
+                        
+         
+</div>
+ -->
+  
+<div class="col-md-2">
+  <button ng-click=filterfortop()>Filter</button>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button ng-click=resetfortop()>Reset</button>
+</div>
+ </div>
+
+<br><br>
+<div class="row">
+<div class="col-md-1"></div>
+    <div class="col-md-4">
+    <h4 style="padding-left: 0px;">Top 20 startups by funding</h4><br>
+    <div>
+             <table id="table_format" class="col-md-8 table table-bordered" style="width:300px" >
+                    <tbody style="max-height:800px;" >
+                                
+                                   <th>Name</th>
+                                    <th>Funding in USD</th>
+                                   <!--  <th>% increase</th> -->
+                                <tr data-ng-repeat="x in toptable" >
+                                    <td>{{x.Name}}</td>
+                                    <td>${{x.Tot_Funding| number}}</td>
+                                </tr> 
+
+                    </tbody>
+            </table>
+    </div>
+
+       </div>
+       <div class="row">
+       <div class="col-md-5">
+    <h4 style="text-align: center;padding-left: 0px;">#startups / fund by geography</h4><br>
+        <div id="worldchart" style="width: 600px; height: 300px;"></div>
+        </div>
+      
+
+<div class="col-md-1"></div>
+
+    <div class="col-md-5">
+        
+<br><br>
+<br><br><center><h4>#Startups by Category</h4>
+       
+        <div id="piechart" style="width: 600px; height: 350px;"></div>
+        </center>
+    </div>
+</div>
+
+</div>
+
+<br><br>
+<br><br>
+
+<br>
+ <div class="col-md-12">
+ <center>
+   <input type="text" ng-model="textWord"  placeholder="Search text here " style=" width: 500px;padding-top: -20px" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button ng-click=textSearch()><b>Search</b></button><br><br><br>
+</center>
+</div>
+
+
+<br><br><br>                     
+
+<div class="row">
+<div class="col-md-1"></div>
+<div class="col-md-2">
+
+<select  ng-model="Country"
+                        ng-options="x.Country as x.Country for x in fullmeows1 | orderBy:'Country' | unique : 'Country'"
+                        
+                        class="form-control" 
+                        ng-required="true"
+                        id="Country">
+                        <option value="">All Country</option>
+                        </select>
+                        
+</div>
+
+<div class="col-md-2">
+<select  ng-model="Category"
+                        ng-options="x.Category as x.Category for x in IndustryTag| orderBy:'Category'| unique : 'Category'"
+                        class="form-control" 
+                        ng-required="true"
+                        id="Category">
+                        <option value="">All Category </option>
+                        </select>
+                        
+         
+</div>
+
+
+
+
+<div class="col-md-2">
+<select  ng-model="Channel"
+                        ng-options="x.Channel as x.Channel for x in fullmeows1 | orderBy:'Channel' | unique : 'Channel'"
+                        class="form-control" 
+                        ng-required="true"
+                        id="Channel">
+                        <option value="">All Channel</option>
+                        </select>
+                        
+         
+</div>
+<div class="col-md-2">
+<select  ng-model="Fund_Data_Availability"
+                       ng-options="x.Fund_Data_Availability as x.Fund_Data_Availability for x in fullmeows1 | unique : 'Fund_Data_Availability'"
+                       class="form-control" 
+                       ng-required="true"
+                       id="Fund_Data_Availability">
+                       <option value="">Fund Data Availability</option>
+                       </select>
+</div>
+<!-- <d
+<div class="col-sm-2">
+<select  ng-model="Fund_Data_Availability"
+                       ng-options="x.Fund_Data_Availability as x.Fund_Data_Availability for x in fullmeows | unique : 'Fund_Data_Availability'"
+                       class="form-control" 
+                       ng-required="true"
+                       id="Fund_Data_Availability">
+                       <option value="">Fund Data Availability</option>
+                       </select>
+</div>
+ <div class="col-sm-2">
+<TD><select  ng-model="Country"
+                        ng-options="x.Country as x.Country for x in meows"
+                        class="form-control" 
+                        ng-required="true"
+                        id="Country">
+                        <option value="">Country</option>
+                        </select>
+                        </TD>
+         
+</div> -->
+
+<div class="col-md-2">
+
+<button ng-click=somett()>Filter</button>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button ng-click=reset()>Reset</button>
+</div>
+<div class="col-md-1" style="padding-bottom:10px">
+<a  ng-click=getdata() style="background-color: none; cursor: pointer;">
+       <img  id="btnExport" class="navbar-header" style="padding-left:0px;width:50px;height:40px" src="/img/excel.png"  >
+   </a>
+</div>
+</div>
+<div class="col-md-12"> <br><br></div>
+
+         
+    <!-- <div class="col-sm-2">
+          <input align="right" type="text"  class="form-control" placeholder="Search for keyword">
+    </div> --> 
+<br>
+<br>
+<br>
+<br>
+
+<!-- <div class="col-md-8" > -->
+<div class="col-md-12" id="divTableDataHolder" >
+
+  <div class="table-responsive">
+     <table id="table_format" class="table table-bordered"  >
+                     
+                        <tbody>
+                        
+                       
+                        <tr>
+                            <th>Name</th>
+                            <!-- <th>Description</th> -->
+                           <!--  <th>Oneliner</th> -->
+                            <th>Location</th>
+                            <th>Country</th>
+                            <th>Continent</th>
+                           <!--  <th>Category</th> -->
+                            <th>Founder</th>
+                            <!-- <th>Stage</th> -->
+                          <!--   <th>Team</th> -->
+                            <th>Founded Date</th>
+                            <th>Total funding in USD</th>
+                            <th>URL</th>
+                            <th>Channel</th>
+                                                       
+                        </tr>
+                        
+                        
+                                      
+                      <tr data-ng-repeat="meow in filterData ">
+                        <td title="'Name'" filter="{ Name: 'text'}" sortable="'Name'"  >
+                        <a  href="#/startupdetail?startupname={{meow.Name}}" data-toggle="tooltip" title={{meow.Description}}>{{meow.Name}}
+                        </a></td>
+                        <!-- <td title="'Description'" filter="{ Description: 'text'}" sortable="'Description'" class="container"><div class="table-responsive" style="height: 40px">>{{meow.Description}}</div></td> -->
+                       <!--  <td title="'Oneliner '" filter="{ Oneliner: 'number'}" sortable="'Oneliner'">{{meow.Oneliner}}</td> -->
+                        <td title="'Location'" filter="{ Location: 'text'}" sortable="'Location'">{{meow.Location}}</td>
+                        <td title="'Country '" filter="{ Country: 'number'}" sortable="'Country'">{{meow.Country}}</td>
+                        <td title="'Continent'" filter="{ Continent: 'text'}" sortable="'Continent'">{{meow.Continent}}</td>                                  
+                    <!--     <td title="'IndusrtyTag'" filter="{ IndusrtyTag: 'text'}" sortable="'IndusrtyTag'">{{meow.IndustryTag}}</td> -->
+                        <td title="'Founder'" filter="{ Founder: 'text'}" sortable="'Founder'">{{meow.Founder}}</td>              
+                        <!-- <td title="'Stage'" filter="{ Stage: 'text'}" sortable="'Stage'">{{meow.Stage}}</td> -->
+                  <!--       <td title="'Team'" filter="{ Price: 'Team'}" sortable="'Team'">{{meow.Team}}</td> -->
+                        <td title="'Founded_Date '" filter="{ Founded_Date: 'number'}" sortable="'Founded_Date'">{{meow.Founded_Date}}</td>
+                        <td title="'Tot_Funding '" filter="{ Tot_Funding: 'number'}" sortable="'Tot_Funding'">${{meow.Tot_Funding| number}}</td>
+                        <td title="'URL '" filter="{ URL: 'number'}" sortable="'URL'"><a  href="{{meow.URL}}" data-toggle="tooltip" title={{meow.URL}}>URL
+                        </a></td>
+                        <td title="'Channel '" filter="{ Channel: 'number'}" sortable="'Channel'">{{meow.Channel}}</td>
+                                             
+
+                       
+
+
+                       <!--  <td><a href ng-click="removeMeow(meow)"><span class="glyphicon glyphicon-trash"></span></a></td> -->
+                      </tr>
+                           
+                    </tbody>
+                </table>
+                </div>
+                </div>
+                <br><br><br><br>
+                
+                   <center>{{chartna}}</center><br><br><br><br><br>
+                <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-3">
+             <!--    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+
+                <button ng-click=firstpage()> << First</button>
+                <button ng-click=prevpage()> < Previous </button>
+               
+                </div>
+               <!--  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  -->      
+                <div class="col-md-5">
+                Page number : <input ng-model="currentpageno"  type="number" name="currentpageno">&nbsp;&nbsp;&nbsp;/ {{lastpageno}}  &nbsp;&nbsp;&nbsp;           
+
+                <button ng-click=goto()>Go </button>
+                </div>
+                <!--  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                 <div class="col-md-1"></div>
+                 <div class="col-md-2">
+                <button ng-click=nextpage()>Next ></button>
+                <button ng-click=lastpage()>Last >></button>
+                <br><br>
+                </div>
+                <div class="col-md-2"></div>
+                </div>
+               
+</div>
+</div>
+
+  <br><br>
+  
+
+   <footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-12">
+                        
+                        <p align="right">Powered by Latentview&nbsp;</p>
+                  
+                  </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+        
+    </footer>
